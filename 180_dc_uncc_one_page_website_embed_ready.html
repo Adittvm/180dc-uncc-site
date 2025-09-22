@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>180 Degrees Consulting — UNC Charlotte</title>
+  <meta name="description" content="180 Degrees Consulting at UNC Charlotte: student-led, pro bono consulting for nonprofits and social enterprises in Charlotte." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121832;
+      --ink: #e9eefb;
+      --muted: #b9c3e6;
+      --brand: #2fe48b;
+      --brand-ink: #0c3020;
+      --accent: #7aa2ff;
+      --ring: rgba(47, 228, 139, 0.4);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, #0a0f1f 0%, #0c1326 60%, #0d1530 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .8rem; border-radius: 999px; background: rgba(122,162,255,.1); border: 1px solid rgba(122,162,255,.25); color: var(--ink); font-weight: 600; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(120%) blur(8px);
+      background: rgba(12, 19, 38, .6);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .7rem; font-weight: 800; letter-spacing: .2px; }
+    .logo { width: 28px; height: 28px; border-radius: 8px; background: radial-gradient(circle at 30% 30%, var(--brand) 0%, #9af5c9 30%, #1dd178 70%); box-shadow: inset 0 0 0 2px rgba(0,0,0,.25), 0 4px 10px rgba(47,228,139,.35); }
+    nav a { margin-left: 1.2rem; font-weight: 600; color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+
+    .hero { padding: 8rem 0 5rem; position: relative; overflow: hidden; }
+    .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.1; margin: .6rem 0 1rem; }
+    .hero p { color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.2rem); }
+
+    .cta { display:inline-block; margin-top: 1.4rem; padding: .9rem 1.2rem; border-radius: 12px; font-weight: 700; letter-spacing: .2px;
+      color: var(--brand-ink); background: var(--brand); border: 1px solid rgba(0,0,0,.2); box-shadow: var(--shadow);
+    }
+    .cta.secondary { background: transparent; color: var(--ink); border: 1px solid rgba(255,255,255,.15); margin-left: .7rem; }
+    .cta:focus { outline: none; box-shadow: 0 0 0 6px var(--ring); }
+
+    .card-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); padding: 1.1rem; border-radius: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: .2rem 0 .5rem; }
+    .card p { color: var(--muted); font-size: .98rem; }
+
+    .panel { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 1.2rem; box-shadow: var(--shadow); }
+
+    section { padding: 4rem 0; }
+    section h2 { font-size: clamp(1.4rem, 3.2vw, 2.1rem); margin: 0 0 .8rem; }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.2rem; }
+    .kpi { text-align: center; padding: 1rem; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); }
+    .kpi strong { display: block; font-size: 1.6rem; }
+    .kpi span { color: var(--muted); font-size: .9rem; }
+
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .project { padding: 1rem; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04); }
+    .badge { display:inline-block; font-size: .75rem; padding: .25rem .55rem; border-radius: 999px; border:1px solid rgba(255,255,255,.15); color: var(--muted); }
+
+    .footer {
+      padding: 2rem 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid { grid-template-columns: 1fr; }
+      .card-row { grid-template-columns: 1fr; }
+      .projects { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+      .hero { padding-top: 6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> 180DC UNCC</div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#join">Join</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <span class="pill">Student‑led • Pro bono • Social Impact</span>
+          <h1>180 Degrees Consulting — UNC Charlotte</h1>
+          <p>
+            We empower students to deliver high‑quality, pro bono consulting for nonprofits and social enterprises across the Charlotte region—building real skills while creating measurable impact.
+          </p>
+          <a class="cta" href="#join">Apply to Join</a>
+          <a class="cta secondary" href="#projects">See Projects</a>
+          <div class="card-row">
+            <div class="card">
+              <h3>Hands‑on Experience</h3>
+              <p>Work on scoped, semester‑long engagements in strategy, finance, ops, data, and growth.</p>
+            </div>
+            <div class="card">
+              <h3>Mentorship</h3>
+              <p>Guidance from alumni & professionals; workshops on problem‑solving and client delivery.</p>
+            </div>
+            <div class="card">
+              <h3>Community Impact</h3>
+              <p>Support mission‑driven partners that may not otherwise access consulting resources.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="panel">
+            <h3 style="margin:.2rem 0 .6rem;">Fast Facts</h3>
+            <div class="kpis">
+              <div class="kpi"><strong>25+</strong><span>Active Members</span></div>
+              <div class="kpi"><strong>8–12</strong><span>Projects / Year</span></div>
+              <div class="kpi"><strong>5+</strong><span>Partner Sectors</span></div>
+              <div class="kpi"><strong>100%</strong><span>Client Satisfaction*</span></div>
+            </div>
+            <p style="color:var(--muted); font-size:.85rem; margin-top:.6rem;">* Illustrative; replace with your current stats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p class="panel">
+          180 Degrees Consulting at UNC Charlotte (180DC UNCC) is a chapter of the world’s largest student‑run consultancy. We partner with nonprofits and social enterprises to solve strategic, financial, and operational challenges. Members gain real‑world experience while developing leadership and teamwork skills aligned with careers in consulting, finance, analytics, and beyond.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <span class="badge">Strategy</span>
+            <h3>Growth Roadmap for Local Nonprofit</h3>
+            <p>Defined service model, pricing approach, and partnership funnel; delivered a 12‑month plan with KPIs.</p>
+          </article>
+          <article class="project">
+            <span class="badge">Operations</span>
+            <h3>Process Redesign for Food Rescue</h3>
+            <p>Mapped the end‑to‑end logistics workflow and reduced volunteer scheduling bottlenecks by 30%.</p>
+          </article>
+          <article class="project">
+            <span class="badge">Analytics</span>
+            <h3>Donor Data Dashboard</h3>
+            <p>Built a lightweight dashboard to track donor retention, acquisition cohorts, and campaign ROI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section id="join">
+      <div class="container">
+        <h2>Join 180DC UNCC</h2>
+        <div class="panel">
+          <p><strong>Who we’re looking for:</strong> curious problem‑solvers across all majors who want to learn by doing and make a difference in Charlotte.</p>
+          <ul>
+            <li>Time commitment: ~5–8 hrs/week during project cycles</li>
+            <li>Training: case basics, client comms, data skills</li>
+            <li>Roles: Consultant, Project Lead, Engagement Manager, Ops/Events</li>
+          </ul>
+          <p style="margin-top:.6rem;">Applications open each semester. Use the form below to express interest.</p>
+          <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');" aria-label="Interest form" style="display:grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top:.8rem;">
+            <label>
+              <span>Name</span>
+              <input required type="text" placeholder="Your name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input required type="email" placeholder="you@uncc.edu" />
+            </label>
+            <label style="grid-column: 1 / -1;">
+              <span>Why 180DC?</span>
+              <textarea rows="3" placeholder="1–2 sentences"></textarea>
+            </label>
+            <button class="cta" type="submit">Submit Interest</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="panel">
+          <p>Have a potential project or partnership? Want to learn more about joining? Reach out:</p>
+          <ul>
+            <li>Email: <a href="mailto:180dc.uncc@example.edu">180dc.uncc@example.edu</a> (replace with your official address)</li>
+            <li>Instagram: <a href="#">@180dc_uncc</a> (placeholder)</li>
+            <li>NinerEngage: Add your organization portal link</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="y"></span> 180 Degrees Consulting — UNC Charlotte. Not affiliated with, or endorsed by, 180DC Global. For internal student use.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Basic input styles without external CSS frameworks
+    for (const el of document.querySelectorAll('input, textarea')){
+      el.style.width = '100%';
+      el.style.marginTop = '.25rem';
+      el.style.padding = '.7rem .8rem';
+      el.style.borderRadius = '12px';
+      el.style.border = '1px solid rgba(255,255,255,.2)';
+      el.style.background = 'rgba(255,255,255,.06)';
+      el.style.color = 'var(--ink)';
+      el.style.outline = 'none';
+      el.addEventListener('focus', ()=> el.style.boxShadow = '0 0 0 6px var(--ring)');
+      el.addEventListener('blur', ()=> el.style.boxShadow = 'none');
+    }
+    for (const ul of document.querySelectorAll('ul')){
+      ul.style.paddingLeft = '1.1rem';
+    }
+  </script>
+</body>
+</html>
